@@ -70,8 +70,8 @@ def query_department(): #This can dump the department list
         return query(s, "ag304_03", {"arg01": arg01, "arg02": arg02, "arg": arg})
     return render_template("query.html")
 
-def query_class(): #This can query the class
-    if request.method == "POST":
+#def query_class(): #This can query the class
+#    if request.method == "POST":
         
 if __name__ == '__main__':
     app.run(host="127.0.0.1")

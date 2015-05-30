@@ -59,16 +59,18 @@ def query_classroom(): #This is a query for class room
         return query(s, "ag302_02", {"yms_yms":yms_yms,"room_id":room_id,"unit_serch":"查 詢"})
     return render_template("query.html")
 
+@app.route('/ap/query_class', methods=['GET', 'POST', 'OPTIONS'])
+@cross_origin(supports_credentials=True)
 def query_department(): #This can dump the department list
     if request.method == "POST":
         yms_yms = request.form['yms_yms']
         arg = request.form['class_id']
-        arg01 = yms_yms.spilt('#')[0]
-        arg02 = yms_yms.spilt('#')[1]
+        arg01 = yms_yms.split('#')[0]
+        arg02 = yms_yms.split('#')[1]
         s = requests.session()
         login(s, "guest", "123")
         return query(s, "ag304_03", {"arg01": arg01, "arg02": arg02, "arg": arg})
-    return render_template("query.html")
+    return render_template("query_class.html")
 
 #def query_class(): #This can query the class
 #    if request.method == "POST":

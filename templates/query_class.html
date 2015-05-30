@@ -1,0 +1,755 @@
+
+<!-- saved from url=(0047)http://140.127.113.231/kuas/ag_pro/ag302_01.jsp -->
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<title></title>
+
+<!--<base target="bottom">--><base href="." target="bottom"></head>
+<style>
+
+  body{
+    font-family:Microsoft JhengHei;
+  }
+  body:hover{
+    cursor:default;
+  }
+  #space{
+    margin:1%;
+  }
+
+  </style>
+<body class="sbody" oncontextmenu="of_setcontextmenu()">
+<SCRIPT type="text/javascript">
+function searchSel() {
+  var input=document.getElementById('realtxt').value;
+  var output=document.getElementById('class_id').options;
+  // console.log(output);
+  for(var i=0;i<output.length;i++) {
+    if(output[i].innerText.indexOf(input)!=-1){
+      output[i].selected="selected";
+    }
+    if(document.getElementById('realtxt').value==''){
+      output[0].selected="selected";
+    }
+  }
+}
+</SCRIPT>
+
+
+
+
+
+
+
+<td colspan="5"><center><font size="5">教室課程查詢</font></center></td></tr>
+<form name="thisform" action="query" method="post"><table align="center"><tbody><tr>
+  <tr>
+    <td><span>快速查詢  </span><input type="http://127.0.0.1:5000/ap/query" id="realtxt" onkeyup="searchSel()" align="center">
+    <div id="space"></div>
+    </td>
+  </tr>
+  <td><center>
+    <span>學年度： </span>
+    <select id="yms_yms" name="yms_yms" size="1" class="text11"><option value="104#1">104學年度第1學期</option><option value="103#1">103學年度第1學期</option><option value="103#2" selected="">103學年度第2學期</option><option value="103#4">103學年度暑修</option><option value="103#5">103學年度先修學期</option><option value="102#1">102學年度第1學期</option><option value="102#2">102學年度第2學期</option><option value="102#4">102學年度暑修</option><option value="101#1">101學年度第1學期</option><option value="101#2">101學年度第2學期</option><option value="101#3">101學年度寒修</option><option value="101#4">101學年度暑修</option><option value="100#1">100學年度第1學期</option><option value="100#2">100學年度第2學期</option><option value="100#3">100學年度寒修</option><option value="100#4">100學年度暑修</option><option value="99#1">99學年度第1學期</option><option value="99#2">99學年度第2學期</option><option value="99#3">99學年度寒修</option><option value="99#4">99學年度暑修</option><option value="98#1">98學年度第1學期</option><option value="98#2">98學年度第2學期</option><option value="98#3">98學年度寒修</option><option value="98#4">98學年度暑修</option><option value="97#1">97學年度第1學期</option><option value="97#2">97學年度第2學期</option><option value="97#3">97學年度寒修</option><option value="97#4">97學年度暑修</option><option value="96#1">96學年度第1學期</option><option value="96#2">96學年度第2學期</option><option value="96#3">96學年度寒修</option><option value="96#4">96學年度暑修</option><option value="95#1">95學年度第1學期</option><option value="95#2">95學年度第2學期</option><option value="94#1">94學年度第1學期</option><option value="94#2">94學年度第2學期</option><option value="93#1">93學年度第1學期</option><option value="93#2">93學年度第2學期</option><option value="92#1">92學年度第1學期</option><option value="92#2">92學年度第2學期</option></select>
+    <span>系別年級 </span>
+    <select name="class_id" id="class_id">
+
+  <option value="UC021411">四會一甲</option>
+
+  <option value="UC021421">四會二甲</option>
+
+  <option value="UC021431">四會三甲</option>
+
+  <option value="UC021441">四會四甲</option>
+
+  <option value="UC021711">碩會一甲</option>
+
+  <option value="UC021721">碩會二甲</option>
+
+  <option value="UC022411">進四會一甲</option>
+
+  <option value="UC022421">進四會二甲</option>
+
+  <option value="UC022431">進四會三甲</option>
+
+  <option value="UC022441">進四會四甲</option>
+
+  <option value="UC022711">進碩會一甲</option>
+
+  <option value="UC022721">進碩會二甲</option>
+
+  <option value="UC023311">進修學院會三甲</option>
+
+  <option value="UC023321">進修學院會四甲</option>
+
+  <option value="UC061411">四金一甲</option>
+
+  <option value="UC061421">四金二甲</option>
+
+  <option value="UC061431">四金三甲</option>
+
+  <option value="UC061441">四金四甲</option>
+
+  <option value="UC062331">進技金三甲</option>
+
+  <option value="UC062341">進技金四甲</option>
+
+  <option value="UC063311">進修學院金三甲</option>
+
+  <option value="UC063321">進修學院金四甲</option>
+
+  <option value="UC071441">四財四甲</option>
+
+  <option value="UC111411">四國企一甲</option>
+
+  <option value="UC111421">四國企二甲</option>
+
+  <option value="UC111431">四國企三甲</option>
+
+  <option value="UC111441">四國企四甲</option>
+
+  <option value="UC112411">進四國企一甲</option>
+
+  <option value="UC112421">進四國企二甲</option>
+
+  <option value="UC112431">進四國企三甲</option>
+
+  <option value="UC112441">進四國企四甲</option>
+
+  <option value="UC113311">進修學院國企三甲</option>
+
+  <option value="UC113321">進修學院國企四甲</option>
+
+  <option value="UC441711">金融系碩士班一甲</option>
+
+  <option value="UC441721">金融系碩士班二甲</option>
+
+  <option value="UC442711">金融系碩專班一甲</option>
+
+  <option value="UC442712">金融系碩專班一乙</option>
+
+  <option value="UC442721">金融系碩專班二甲</option>
+
+  <option value="UC442722">金融系碩專班二乙</option>
+
+  <option value="UE151411">四資工一甲</option>
+
+  <option value="UE151421">四資工二甲</option>
+
+  <option value="UE151431">四資工三甲</option>
+
+  <option value="UE151441">四資工四甲</option>
+
+  <option value="UE151711">碩資工一甲</option>
+
+  <option value="UE151721">碩資工二甲</option>
+
+  <option value="UE152711">進碩資工一甲</option>
+
+  <option value="UE152721">進碩資工二甲</option>
+
+  <option value="UE161331">技化材三甲</option>
+
+  <option value="UE161341">技化材四甲</option>
+
+  <option value="UE161411">四化材一甲</option>
+
+  <option value="UE161412">四化材一乙</option>
+
+  <option value="UE161421">四化材二甲</option>
+
+  <option value="UE161422">四化材二乙</option>
+
+  <option value="UE161431">四化材三甲</option>
+
+  <option value="UE161432">四化材三乙</option>
+
+  <option value="UE161441">四化材四甲</option>
+
+  <option value="UE161442">四化材四乙</option>
+
+  <option value="UE161811">化材系博士班一甲</option>
+
+  <option value="UE161821">化材系博士班二甲</option>
+
+  <option value="UE162411">進四化材一甲</option>
+
+  <option value="UE162421">進四化材二甲</option>
+
+  <option value="UE162431">進四化材三甲</option>
+
+  <option value="UE162441">進四化材四甲</option>
+
+  <option value="UE171711">碩化材一甲</option>
+
+  <option value="UE171721">碩化材二甲</option>
+
+  <option value="UE172711">進碩化材一甲</option>
+
+  <option value="UE172721">進碩化材二甲</option>
+
+  <option value="UE181711">碩電一甲</option>
+
+  <option value="UE181721">碩電二甲</option>
+
+  <option value="UE182711">進碩電機一甲</option>
+
+  <option value="UE182721">進碩電機二甲</option>
+
+  <option value="UE191811">博電一甲</option>
+
+  <option value="UE191821">博電二甲</option>
+
+  <option value="UE201711">碩子一甲</option>
+
+  <option value="UE201721">碩子二甲</option>
+
+  <option value="UE202711">進碩電子一甲</option>
+
+  <option value="UE202721">進碩電子二甲</option>
+
+  <option value="UE231411">四土一甲</option>
+
+  <option value="UE231412">四土一乙</option>
+
+  <option value="UE231421">四土二甲</option>
+
+  <option value="UE231422">四土二乙</option>
+
+  <option value="UE231431">四土三甲</option>
+
+  <option value="UE231432">四土三乙</option>
+
+  <option value="UE231441">四土四甲</option>
+
+  <option value="UE232331">進技土三甲</option>
+
+  <option value="UE232341">進技土四甲</option>
+
+  <option value="UE233311">進修學院土三甲</option>
+
+  <option value="UE233321">進修學院土四甲</option>
+
+  <option value="UE251411">四機一甲</option>
+
+  <option value="UE251412">四機一乙</option>
+
+  <option value="UE251413">四機一丙</option>
+
+  <option value="UE251421">四機二甲</option>
+
+  <option value="UE251422">四機二乙</option>
+
+  <option value="UE251423">四機二丙</option>
+
+  <option value="UE251431">四機三甲</option>
+
+  <option value="UE251432">四機三乙</option>
+
+  <option value="UE251433">四機三丙</option>
+
+  <option value="UE251434">四機三丁</option>
+
+  <option value="UE251441">四機四甲</option>
+
+  <option value="UE251442">四機四乙</option>
+
+  <option value="UE251443">四機四丙</option>
+
+  <option value="UE251444">四機四丁</option>
+
+  <option value="UE251711">機械系碩士班一甲</option>
+
+  <option value="UE251721">機械系碩士班二甲</option>
+
+  <option value="UE251811">機械系博士班一甲</option>
+
+  <option value="UE251821">機械系博士班二甲</option>
+
+  <option value="UE252411">進四機一甲</option>
+
+  <option value="UE252421">進四機二甲</option>
+
+  <option value="UE252431">進四機三甲</option>
+
+  <option value="UE252441">進四機四甲</option>
+
+  <option value="UE252711">機械系碩專班一甲</option>
+
+  <option value="UE252721">機械系碩專班二甲</option>
+
+  <option value="UE253311">進修學院機三甲</option>
+
+  <option value="UE253321">進修學院機四甲</option>
+
+  <option value="UE271411">四電一甲</option>
+
+  <option value="UE271412">四電一乙</option>
+
+  <option value="UE271413">四電一丙</option>
+
+  <option value="UE271421">四電二甲</option>
+
+  <option value="UE271422">四電二乙</option>
+
+  <option value="UE271423">四電二丙</option>
+
+  <option value="UE271431">四電三甲</option>
+
+  <option value="UE271432">四電三乙</option>
+
+  <option value="UE271433">四電三丙</option>
+
+  <option value="UE271434">四電三丁</option>
+
+  <option value="UE271441">四電四甲</option>
+
+  <option value="UE271442">四電四乙</option>
+
+  <option value="UE271443">四電四丙</option>
+
+  <option value="UE272411">進四電一甲</option>
+
+  <option value="UE272421">進四電二甲</option>
+
+  <option value="UE272431">進四電三甲</option>
+
+  <option value="UE272441">進四電四甲</option>
+
+  <option value="UE273311">進修學院電三甲</option>
+
+  <option value="UE273321">進修學院電四甲</option>
+
+  <option value="UE291411">四子一甲</option>
+
+  <option value="UE291412">四子一乙</option>
+
+  <option value="UE291413">四子一丙</option>
+
+  <option value="UE291421">四子二甲</option>
+
+  <option value="UE291422">四子二乙</option>
+
+  <option value="UE291423">四子二丙</option>
+
+  <option value="UE291431">四子三甲</option>
+
+  <option value="UE291432">四子三乙</option>
+
+  <option value="UE291433">四子三丙</option>
+
+  <option value="UE291441">四子四甲</option>
+
+  <option value="UE291443">四子四丙</option>
+
+  <option value="UE291811">博子一甲</option>
+
+  <option value="UE291821">博子二甲</option>
+
+  <option value="UE292411">進四子一甲</option>
+
+  <option value="UE292421">進四子二甲</option>
+
+  <option value="UE292431">進四子三甲</option>
+
+  <option value="UE292441">進四子四甲</option>
+
+  <option value="UE293311">進修學院子三甲</option>
+
+  <option value="UE293321">進修學院子四甲</option>
+
+  <option value="UE311331">技模三甲</option>
+
+  <option value="UE311341">技模四甲</option>
+
+  <option value="UE311411">四模一甲</option>
+
+  <option value="UE311412">四模一乙</option>
+
+  <option value="UE311413">四模一丙</option>
+
+  <option value="UE311414">四模一丁</option>
+
+  <option value="UE311421">四模二甲</option>
+
+  <option value="UE311422">四模二乙</option>
+
+  <option value="UE311423">四模二丙</option>
+
+  <option value="UE311431">四模三甲</option>
+
+  <option value="UE311432">四模三乙</option>
+
+  <option value="UE311433">四模三丙</option>
+
+  <option value="UE311441">四模四甲</option>
+
+  <option value="UE311811">博模一甲</option>
+
+  <option value="UE311821">博模二甲</option>
+
+  <option value="UE312331">進技模三甲</option>
+
+  <option value="UE312341">進技模四甲</option>
+
+  <option value="UE313311">進修學院模三甲</option>
+
+  <option value="UE313321">進修學院模四甲</option>
+
+  <option value="UE331711">碩模一甲</option>
+
+  <option value="UE331721">碩模二甲</option>
+
+  <option value="UE332711">進碩模一甲</option>
+
+  <option value="UE332721">進碩模二甲</option>
+
+  <option value="UE391711">碩光電一甲</option>
+
+  <option value="UE391721">碩光電二甲</option>
+
+  <option value="UE662621">進碩秋模高扣二甲</option>
+
+  <option value="UE671621">碩秋外製管二甲</option>
+
+  <option value="UE681811">土木系博士班一甲</option>
+
+  <option value="UE681821">土木系博士班二甲</option>
+
+  <option value="UE691711">土木系碩士班一甲</option>
+
+  <option value="UE691721">土木系碩士班二甲</option>
+
+  <option value="UE692711">土木系碩專一甲</option>
+
+  <option value="UE692721">土木系碩專二甲</option>
+
+  <option value="UE711711">碩工一甲</option>
+
+  <option value="UE711721">碩工二甲</option>
+
+  <option value="UE712711">進碩工管一甲</option>
+
+  <option value="UE712721">進碩工管二甲</option>
+
+  <option value="UE721331">技工三甲</option>
+
+  <option value="UE721341">技工四甲</option>
+
+  <option value="UE721411">四工一甲</option>
+
+  <option value="UE721421">四工二甲</option>
+
+  <option value="UE721431">四工三甲</option>
+
+  <option value="UE721441">四工四甲</option>
+
+  <option value="UE722331">進技工管三甲</option>
+
+  <option value="UE722341">進技工管四甲</option>
+
+  <option value="UE723311">進修學院工三甲</option>
+
+  <option value="UE723321">進修學院工四甲</option>
+
+  <option value="UE781711">模具系應科碩一甲</option>
+
+  <option value="UE781721">模具系應科碩二甲</option>
+
+  <option value="UE782711">模具應科碩專一甲</option>
+
+  <option value="UE782721">模具應科碩專二甲</option>
+
+  <option value="UE792511">進碩春工製造ㄧ甲</option>
+
+  <option value="UH001431">四人文學院三甲</option>
+
+  <option value="UH001441">四人文學院四甲</option>
+
+  <option value="UH511411">四外一甲</option>
+
+  <option value="UH511412">四外一乙</option>
+
+  <option value="UH511421">四外二甲</option>
+
+  <option value="UH511422">四外二乙</option>
+
+  <option value="UH511431">四外三甲</option>
+
+  <option value="UH511432">四外三乙</option>
+
+  <option value="UH511441">四外四甲</option>
+
+  <option value="UH511442">四外四乙</option>
+
+  <option value="UH513311">進修學院外三甲</option>
+
+  <option value="UH513321">進修學院外四甲</option>
+
+  <option value="UH521431">四文三甲</option>
+
+  <option value="UH521441">四文四甲</option>
+
+  <option value="UH531411">四人一甲</option>
+
+  <option value="UH531421">四人二甲</option>
+
+  <option value="UH531431">四人三甲</option>
+
+  <option value="UH531441">四人四甲</option>
+
+  <option value="UH541711">碩人一甲</option>
+
+  <option value="UH541721">碩人二甲</option>
+
+  <option value="UH542711">進碩人一甲</option>
+
+  <option value="UH542721">進碩人二甲</option>
+
+  <option value="UH571711">應外系碩士班一甲</option>
+
+  <option value="UH571721">應外系碩士班二甲</option>
+
+  <option value="UH581411">四文創一甲</option>
+
+  <option value="UH581421">四文創二甲</option>
+
+  <option value="UH581711">文創系碩士班一甲</option>
+
+  <option value="UH581721">文創系碩士班二甲</option>
+
+  <option value="UH582711">進碩文創一甲</option>
+
+  <option value="UI062621">光半導產碩秋二甲</option>
+
+  <option value="UI071511">碩春外資電一甲</option>
+
+  <option value="UI071611">碩秋外資電一甲</option>
+
+  <option value="UM441711">觀光系碩士班一甲</option>
+
+  <option value="UM441721">觀光系碩士班二甲</option>
+
+  <option value="UM442711">觀光系碩專班一甲</option>
+
+  <option value="UM442721">觀光系碩專班二甲</option>
+
+  <option value="UM651411">四財管一甲</option>
+
+  <option value="UM651412">四財管一乙</option>
+
+  <option value="UM651421">四財管二甲</option>
+
+  <option value="UM651422">四財管二乙</option>
+
+  <option value="UM651431">四財管三甲</option>
+
+  <option value="UM651711">碩財管一甲</option>
+
+  <option value="UM651721">碩財管二甲</option>
+
+  <option value="UM652331">進技財管三甲</option>
+
+  <option value="UM652341">進技財管四甲</option>
+
+  <option value="UM652711">進碩財管一甲</option>
+
+  <option value="UM652712">進碩財管一乙</option>
+
+  <option value="UM652713">進碩財管一丙</option>
+
+  <option value="UM652721">進碩財管二甲</option>
+
+  <option value="UM652722">進碩財管二乙</option>
+
+  <option value="UM652723">進碩財管二丙</option>
+
+  <option value="UM731711">碩資一甲</option>
+
+  <option value="UM731721">碩資二甲</option>
+
+  <option value="UM732711">進碩資管一甲</option>
+
+  <option value="UM732721">進碩資管二甲</option>
+
+  <option value="UM741411">四企一甲</option>
+
+  <option value="UM741421">四企二甲</option>
+
+  <option value="UM741431">四企三甲</option>
+
+  <option value="UM741441">四企四甲</option>
+
+  <option value="UM741711">碩企一甲</option>
+
+  <option value="UM741721">碩企二甲</option>
+
+  <option value="UM742331">進技企三甲</option>
+
+  <option value="UM742341">進技企四甲</option>
+
+  <option value="UM742711">進碩企一甲</option>
+
+  <option value="UM742721">進碩企二甲</option>
+
+  <option value="UM743311">進修學院企三甲</option>
+
+  <option value="UM743312">進修學院企三乙</option>
+
+  <option value="UM743321">進修學院企四甲</option>
+
+  <option value="UM743322">進修學院企四乙</option>
+
+  <option value="UM761411">四觀一甲</option>
+
+  <option value="UM761412">四觀一乙</option>
+
+  <option value="UM761413">四觀一丙</option>
+
+  <option value="UM761421">四觀二甲</option>
+
+  <option value="UM761422">四觀二乙</option>
+
+  <option value="UM761423">四觀二丙</option>
+
+  <option value="UM761431">四觀三甲</option>
+
+  <option value="UM761432">四觀三乙</option>
+
+  <option value="UM761441">四觀四甲</option>
+
+  <option value="UM761442">四觀四乙</option>
+
+  <option value="UM762331">進技觀三甲</option>
+
+  <option value="UM762341">進技觀四甲</option>
+
+  <option value="UM763311">進修學院觀三甲</option>
+
+  <option value="UM763321">進修學院觀四甲</option>
+
+  <option value="UM781411">四資一甲</option>
+
+  <option value="UM781412">四資一乙</option>
+
+  <option value="UM781421">四資二甲</option>
+
+  <option value="UM781422">四資二乙</option>
+
+  <option value="UM781431">四資三甲</option>
+
+  <option value="UM781432">四資三乙</option>
+
+  <option value="UM781441">四資四甲</option>
+
+  <option value="UM781442">四資四乙</option>
+
+  <option value="UM831711">碩國企一甲</option>
+
+  <option value="UM831721">碩國企二甲</option>
+
+  <option value="UM832711">進碩國企一甲</option>
+
+  <option value="UM832721">進碩國企二甲</option>
+
+  <option value="UM852711">企管高階碩專一甲</option>
+
+  <option value="UM852721">企管高階碩專二甲</option>
+
+  <option value="XC001411">四通一甲</option>
+
+  <option value="XC001418">四通一甲(燕巢區)</option>
+
+  <option value="XC001421">四通二甲</option>
+
+  <option value="XC001428">四通二甲(燕巢區)</option>
+
+  <option value="XC001431">四通三甲</option>
+
+  <option value="XC001438">四通三甲(燕巢區)</option>
+
+  <option value="XC001441">四通四甲</option>
+
+  <option value="XC001448">四通四甲(燕巢區)</option>
+
+  <option value="XC002331">進技通三甲</option>
+
+  <option value="XC002341">進技通四甲</option>
+
+  <option value="XC002421">進四通二甲</option>
+
+  <option value="XC002431">進四通三甲</option>
+
+  <option value="XC002441">進四通四甲</option>
+
+  <option value="XC003311">進修學院通三甲</option>
+
+  <option value="XC003321">進修學院通四甲</option>
+
+  <option value="XK001411">日四技跨外校一甲</option>
+
+  <option value="XK001711">日碩士跨外校一甲</option>
+
+  <option value="XK001811">日博士跨外校一甲</option>
+
+  <option value="XK002411">進四跨外班一甲</option>
+
+  <option value="XK012331">進技外校工科三甲</option>
+
+  <option value="XM001421">四軍二甲</option>
+
+  <option value="XM001428">四軍二甲(燕巢區)</option>
+
+  <option value="XP001421">四體二甲</option>
+
+  <option value="XP001422">四體二乙</option>
+
+  <option value="XP001423">四體二丙</option>
+
+  <option value="XP001424">四體二丁</option>
+
+  <option value="XP001425">四體二戍</option>
+
+  <option value="XP001428">四體二甲(燕巢區)</option>
+
+  <option value="XP00142A">四體二乙(燕巢區)</option>
+
+  <option value="XP00142B">四體二丙(燕巢區)</option>
+
+  <option value="XP001431">四體三甲</option>
+
+  <option value="XP001432">四體三乙</option>
+
+  <option value="XP001433">四體三丙</option>
+
+  <option value="XP001438">四體三甲(燕巢區)</option>
+
+  <option value="XP00143A">四體三乙(燕巢區)</option>
+
+</select>
+
+  <input name="unit_serch" id="search"  class="btn btn-default" type="button" value="查 詢"></td></tr></tbody></table></form>
+  <hr>
+
+<div class='result'></div>
+</body></html>
+<script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script>
+  $("#search").click(function(){
+    $.post("/ap/query_class",
+           {
+            'class_id': $("#class_id").val(),
+            'yms_yms': $("#yms_yms").val(),
+            'unit_serch': '查 詢'
+           },
+           function(data){
+            $(".result").eq(0).html(data);
+           }
+          );
+  })
+</script>

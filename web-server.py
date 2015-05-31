@@ -48,6 +48,26 @@ def query_department(): #This can dump the department list
         ap.login(s, "guest", "123")
         return ap.query(s, "ag304_03", {"arg01": arg01, "arg02": arg02, "arg": arg})
     return render_template("query_class.html")
-        
+
+@app.route('/ap/query_Teacher', methods=['GET', 'POST', 'OPTIONS'])
+@cross_origin(supports_credentials=True)
+def query_Teacher(): #This is the backend query Teacher
+    if request.method == "POST":
+        yms_yms = request.form['yms_yms'] # Sememster
+        tea_num = request.form['Teacher_Number']
+        tid = TeacherData[tea_num]
+        tid = tid.replace('\n', '')
+        s = requests.session()
+        ap.login(s, "guest", "123")
+        #return 'Now query number = '+yms_yms + str(tea_num) + ' and his id = ' + TeacherData[tea_num]
+        return ap.query(s, "ag300_02", {"yms_yms": yms_yms, "tea_str1": tid})
+    return render_template("query_teacher.html")
+    
 if __name__ == '__main__':
+    TeacherData = dict()
+    with open('BackEndData', 'r') as fp:
+        for line in fp:
+            num = line.split('#')[0]
+            ID = line.split('#')[1]
+            TeacherData[num] = ID
     app.run(host="127.0.0.1")

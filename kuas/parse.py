@@ -34,7 +34,11 @@ def course(cont):
         return [[], False, False, center_text]
 
 
-    tbody = root.xpath("//table")[-1]
+    try:
+        tbody = root.xpath("//table")[-1]
+    except:
+        return [[], False, False, center_text]
+
 
     course_table = {}
     for r_index, r in enumerate(tbody[1:]):

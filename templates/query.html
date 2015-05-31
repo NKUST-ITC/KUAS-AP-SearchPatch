@@ -1,8 +1,10 @@
-<!-- saved from url=(0047)http://140.127.113.231/kuas/ag_pro/ag302_01.jsp -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <link href="../static/bootstrap.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <title></title>
 
@@ -21,28 +23,6 @@
 
   </style>
 <body class="sbody" oncontextmenu="of_setcontextmenu()">
-<SCRIPT type="text/javascript">
-function searchSel() {
-  var input=document.getElementById('realtxt').value;
-  var output=document.getElementById('room_id').options;
-  // console.log(output);
-  for(var i=0;i<output.length;i++) {
-    if(output[i].innerText.indexOf(input)!=-1){
-      output[i].selected="selected";
-    }
-    if(document.getElementById('realtxt').value==''){
-      output[0].selected="selected";
-    }
-  }
-}
-</SCRIPT>
-
-
-
-
-
-
-
 
 <form name="thisform" action="query" method="post"><table align="center"><tbody><tr><td colspan="5"><center><font size="5" color="black">教室課程查詢</font></center></td></tr>
 
@@ -57,7 +37,6 @@ function searchSel() {
   <input name="unit_serch" id="search" class="btn btn-default" type="button" value="查 詢"></td></tr></tbody></table></form><hr>
   <div class='result'></div>
 </body></html>
-<script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
 <script>
   $("#search").click(function(){
     $.post("/ap/query",
@@ -98,3 +77,27 @@ function searchSel() {
            }, 'json');
   })
 </script>
+<SCRIPT type="text/javascript">
+var t = []
+var temp = document.getElementById('room_id').getElementsByTagName('option');
+for(i=0;i<temp.length;i++){
+  t.push(temp[i]);
+}
+temp = t;
+
+function searchSel() {
+  $( "#realtxt" ).autocomplete({
+  source: temp
+  });
+  var input=document.getElementById('realtxt').value;
+  $("#room_id").children().remove();
+  for(var i=0;i<temp.length;i++) {
+    if(temp[i].text.indexOf(input)!=-1){
+      $("#room_id").append(temp[i]);
+    }
+    if(document.getElementById('realtxt').value==''){
+      $("#room_id").append(temp[i]);
+    }
+  }
+}
+</SCRIPT>

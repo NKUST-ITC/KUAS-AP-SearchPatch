@@ -4,6 +4,7 @@ import os
 import json
 import requests
 import kuas.ap as ap
+import kuas.parse as parse
 from lxml import etree
 from flask import Flask, render_template, request, session
 from flask_cors import *
@@ -33,7 +34,8 @@ def query_classroom(): #This is a query for class room
         room_id = request.form['room_id']
         s = requests.session()
         ap.login(s, "guest", "123")
-        return ap.query(s, "ag302_02", {"yms_yms":yms_yms,"room_id":room_id,"unit_serch":"查 詢"})
+        response = parse.course(ap.query(s, "ag302_02", {"yms_yms":yms_yms,"room_id":room_id,"unit_serch":"查 詢"}))
+        return json.dumps(response[0])
     return render_template("query.html")
 
 @app.route('/ap/query_class', methods=['GET', 'POST', 'OPTIONS'])
@@ -46,7 +48,8 @@ def query_department(): #This can dump the department list
         arg02 = yms_yms.split('#')[1]
         s = requests.session()
         ap.login(s, "guest", "123")
-        return ap.query(s, "ag304_03", {"arg01": arg01, "arg02": arg02, "arg": arg})
+        response = parse.course(ap.query(s, "ag304_03", {"arg01": arg01, "arg02": arg02, "arg": arg}))
+        return json.dumps(response[0])
     return render_template("query_class.html")
 
 @app.route('/ap/query_Teacher', methods=['GET', 'POST', 'OPTIONS'])
@@ -59,7 +62,8 @@ def query_Teacher(): #This is the backend query Teacher
         tid = tid.replace('\n', '')
         s = requests.session()
         ap.login(s, "guest", "123")
-        return ap.query(s, "ag300_02", {"yms_yms": yms_yms, "tea_str1": tid})
+        response = parse.course(ap.query(s, "ag300_02", {"yms_yms": yms_yms, "tea_str1": tid}))
+        return json.dumps(response[0])
     return render_template("query_teacher.html")
     
 if __name__ == '__main__':

@@ -25,12 +25,14 @@
 <body class="sbody" oncontextmenu="of_setcontextmenu()">
 
 <td colspan="5"><center><font size="5">教師課表查詢</font></center></td></tr>
-<form name="thisform" action="query" method="post"><table align="center"><tbody><tr>
+<table align="center"><tbody>
   <tr>
-    <td><span>快速查詢  </span><input type="http://127.0.0.1:5000/ap/query" id="realtxt" onkeyup="searchSel()" align="center">
+    <td><span>快速查詢  </span><input type="text" id="realtxt" onkeyup="searchSel()" align="center">
     <div id="space"></div>
     </td>
-  </tr>
+</tr></tbody></table>
+
+<form name="thisform" action="query" method="post"><table align="center"><tbody><tr>
   <td><center>
     <span>學年度： </span>
     <select id="yms_yms" name="yms_yms" size="1" class="text11"><option value="104#1">104學年度第1學期</option><option value="103#1">103學年度第1學期</option><option value="103#2" selected="">103學年度第2學期</option><option value="103#4">103學年度暑修</option><option value="103#5">103學年度先修學期</option><option value="102#1">102學年度第1學期</option><option value="102#2">102學年度第2學期</option><option value="102#4">102學年度暑修</option><option value="101#1">101學年度第1學期</option><option value="101#2">101學年度第2學期</option><option value="101#3">101學年度寒修</option><option value="101#4">101學年度暑修</option><option value="100#1">100學年度第1學期</option><option value="100#2">100學年度第2學期</option><option value="100#3">100學年度寒修</option><option value="100#4">100學年度暑修</option><option value="99#1">99學年度第1學期</option><option value="99#2">99學年度第2學期</option><option value="99#3">99學年度寒修</option><option value="99#4">99學年度暑修</option><option value="98#1">98學年度第1學期</option><option value="98#2">98學年度第2學期</option><option value="98#3">98學年度寒修</option><option value="98#4">98學年度暑修</option><option value="97#1">97學年度第1學期</option><option value="97#2">97學年度第2學期</option><option value="97#3">97學年度寒修</option><option value="97#4">97學年度暑修</option><option value="96#1">96學年度第1學期</option><option value="96#2">96學年度第2學期</option><option value="96#3">96學年度寒修</option><option value="96#4">96學年度暑修</option><option value="95#1">95學年度第1學期</option><option value="95#2">95學年度第2學期</option><option value="94#1">94學年度第1學期</option><option value="94#2">94學年度第2學期</option><option value="93#1">93學年度第1學期</option><option value="93#2">93學年度第2學期</option><option value="92#1">92學年度第1學期</option><option value="92#2">92學年度第2學期</option></select>
@@ -817,26 +819,44 @@
   })
 </script>
 <SCRIPT type="text/javascript">
-var t = []
+var tname = []
+var tnumb = []
 var temp = document.getElementById('Teacher_Number').getElementsByTagName('option');
 for(i=0;i<temp.length;i++){
-  t.push(temp[i]);
+  tname.push(temp[i].innerHTML);
+  tnumb.push(temp[i].value);
 }
-temp = t;
 
 function searchSel() {
-  $( "#realtxt" ).autocomplete({
-  source: temp
-  });
-  var input=document.getElementById('realtxt').value;
-  $("#Teacher_Number").children().remove();
-  for(var i=0;i<temp.length;i++) {
-    if(temp[i].text.indexOf(input)!=-1){
-      $("#Teacher_Number").append(temp[i]);
+    $( "#realtxt" ).autocomplete({
+        source: tname
+    });
+    var keyword = document.getElementById('realtxt').value;
+    //var index = t.indexOf(input);
+    $("#Teacher_Number").children().remove();
+    for(var i = 0; i < tname.length; i++)
+    {
+        if(tname[i].indexOf(keyword) != -1)
+        $("#Teacher_Number").append(new Option(tname[i], tnumb[i]));
+    }
+    if(document.getElementById('Teacher_Number').length == 0)
+    {
+        //If I cant find the keyword, then display all options.
+        for(var i = 0; i < tname.length; i++)
+            $("#Teacher_Number").append(new Option(tname[i], tnumb[i]));
+    }
+    
+/**
+  for(var i = 0; i < t.length; i++) 
+  {
+    if(t[i].indexOf(input)!=-1)
+    {
+      $("#Teacher_Number").append([i]);
     }
     if(document.getElementById('realtxt').value==''){
       $("#Teacher_Number").append(temp[i]);
     }
   }
+**/
 }
 </SCRIPT>

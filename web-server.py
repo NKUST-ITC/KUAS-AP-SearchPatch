@@ -59,7 +59,6 @@ def query_Teacher(): #This is the backend query Teacher
         tid = tid.replace('\n', '')
         s = requests.session()
         ap.login(s, "guest", "123")
-        #return 'Now query number = '+yms_yms + str(tea_num) + ' and his id = ' + TeacherData[tea_num]
         return ap.query(s, "ag300_02", {"yms_yms": yms_yms, "tea_str1": tid})
     return render_template("query_teacher.html")
     

@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import os
 import json
 import requests
 import kuas.ap as ap
 import kuas.parse as parse
-from lxml import etree
 from flask import Flask, render_template, request, session
 from flask_cors import *
 

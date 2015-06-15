@@ -36,7 +36,7 @@ def query_classroom(): #This is a query for class room
         return json.dumps(response[0])
     return render_template("query.html")
 
-@app.route('/ap/query_class', methods=['GET', 'POST', 'OPTIONS'])
+@app.route('/ap/query/class', methods=['GET', 'POST', 'OPTIONS'])
 @cross_origin(supports_credentials=True)
 def query_department(): #This can dump the department list
     if request.method == "POST":
@@ -50,7 +50,7 @@ def query_department(): #This can dump the department list
         return json.dumps(response[0])
     return render_template("query_class.html")
 
-@app.route('/ap/query_teacher', methods=['GET', 'POST', 'OPTIONS'])
+@app.route('/ap/query/teacher', methods=['GET', 'POST', 'OPTIONS'])
 @cross_origin(supports_credentials=True)
 def query_Teacher(): #This is the backend query Teacher
     if request.method == "POST":

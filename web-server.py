@@ -7,13 +7,6 @@ import kuas.parse as parse
 from flask import Flask, render_template, request, session
 from flask_cors import *
 
-ap_login_url = "http://140.127.113.231/kuas/perchk.jsp"
-fnc_url = "http://140.127.113.231/kuas/fnc.jsp"
-query_url = "http://140.127.113.231/kuas/%s_pro/%s.jsp"
-
-LOGIN_TIMEOUT = 5.0
-QUERY_TIMEOUT = 5.0
-RANDOM_TIMEOUT = 5.0
 
 app = Flask(__name__)
 app.config.from_object("config")
